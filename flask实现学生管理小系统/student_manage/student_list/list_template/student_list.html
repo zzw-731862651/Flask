@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <button class="btn">{{ btn }}</button>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>年龄</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+             {% for foo in row %}
+                <tr>
+                    <td>{{ foo.id }}</td>
+                    <td>{{ foo.name }}</td>
+                    <td>{{ foo.gender }}</td>
+                    <td>{{ foo.age }}</td>
+                    <td>
+                        <a href="/student/edit/{{ foo.id }}">编辑</a>|
+                        <a href="/student/del/{{ foo.id }}">删除</a>
+                    </td>
+                </tr>
+             {% endfor %}
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
